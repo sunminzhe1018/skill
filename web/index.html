@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>天气助手 · 百炼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-gradient" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="header">
+      <div class="logo" aria-hidden="true">☁</div>
+      <div>
+        <h1>天气助手</h1>
+        <p class="subtitle">由阿里百炼驱动 · 联网实时查询</p>
+      </div>
+      <span id="statusBadge" class="badge badge--loading">检测中…</span>
+    </header>
+
+    <main class="chat" id="chat" role="log" aria-live="polite">
+      <article class="message message--assistant">
+        <div class="avatar" aria-hidden="true">AI</div>
+        <div class="bubble">
+          <p>你好！我是天气助手。你可以问我：</p>
+          <ul>
+            <li>「北京今天天气怎么样？」</li>
+            <li>「上海明天适合出门吗？」</li>
+            <li>「杭州这周要下雨吗？」</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+
+    <form class="composer" id="form" autocomplete="off">
+      <label class="sr-only" for="input">输入问题</label>
+      <input
+        id="input"
+        type="text"
+        placeholder="例如：深圳今天天气如何？"
+        maxlength="500"
+        required
+      />
+      <button type="submit" id="sendBtn" aria-label="发送">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
